@@ -43,14 +43,14 @@ function Header() {
             <img src=  {logo}  className='w-[80px] md:w[115px] object-cover'/>
             <div className=' hidden md:flex gap-8'>
     {menu.map((item)=>(
-        <HeaderItem name={item.name} Icon = {item.icon}/>
+        <HeaderItem key={item.name} name={item.name} Icon = {item.icon}/>
        
    
     ))}
     </div>
     <div className='flex md:hidden gap-5'>
     {menu.map((item,index)=>index<3 &&(
-        <HeaderItem name={''} Icon = {item.icon}/>
+        <HeaderItem key={index} name={''} Icon = {item.icon}/>
        
    
     ))}
