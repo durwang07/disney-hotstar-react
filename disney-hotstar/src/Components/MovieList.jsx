@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react'
-import GlobalApi from '../Services/GlobalApi'
+import GlobalAPI from '../Services/GlobalAPI';
 import MovieCard from './MovieCard';
 import { IoChevronBackOutline, IoChevronForwardOutline } from 'react-icons/io5';
 import HrMovieCard from './HrMovieCard';
@@ -11,7 +11,7 @@ function MovieList({genreId,index_}) {
     },[])
 
     const getMovieByGenreId=()=>{
-        GlobalApi.getMovieByGenreId(genreId).then(resp=>{
+        GlobalAPI.getMovieByGenreId(genreId).then(resp=>{
             // console.log(resp.data.results)
             setMovieList(resp.data.results)
         })
@@ -33,7 +33,7 @@ function MovieList({genreId,index_}) {
    
     <div ref={elementRef} className='flex overflow-x-auto gap-8
      scrollbar-hide scroll-smooth pt-4 px-3 pb-4'>
-        {movieList.map((item,index)=>(
+        {movieList.map((item)=>(
            <>
           {index_%3==0?<HrMovieCard movie={item}/>:<MovieCard movie={item} />}
            </> 
